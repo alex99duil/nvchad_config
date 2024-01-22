@@ -47,6 +47,8 @@ local plugins = {
     end,
   },
 
+  { import = "nvcommunity.folds.ufo" },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
