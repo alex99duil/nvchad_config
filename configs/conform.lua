@@ -4,11 +4,12 @@ local options = {
 	formatters_by_ft = {
 		lua = { "stylua" },
 
-		javascript = { "prettier" },
-		css = { "prettier" },
-		html = { "prettier" },
+		-- javascript = { "prettier" },
+		-- css = { "prettier" },
+		-- html = { "prettier" },
 
 		sh = { "shfmt" },
+    python = { "black" },
 	},
 
   -- adding same formatter for multiple filetypes can look too much work for some

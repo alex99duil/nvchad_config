@@ -48,6 +48,7 @@ local plugins = {
   },
 
   { import = "nvcommunity.folds.ufo" },
+  { import = "nvcommunity.completion.codeium" },
 
   -- To make a plugin not be loaded
   -- {
