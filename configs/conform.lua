@@ -10,6 +10,8 @@ local options = {
 
 		sh = { "shfmt" },
     python = { "isort", "black" },
+    cpp = { "clang_format" },
+    rust = { "rustfmt" },
 	},
 
   -- adding same formatter for multiple filetypes can look too much work for some

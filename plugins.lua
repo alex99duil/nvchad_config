@@ -47,6 +47,7 @@ local plugins = {
     end,
   },
 
+  "NvChad/nvcommunity",
   { import = "nvcommunity.folds.ufo" },
   { import = "nvcommunity.completion.codeium" },
 

@@ -34,8 +34,9 @@ M.mason = {
     -- "css-lsp",
     -- "html-lsp",
     -- "deno",
-    "typescript-language-server",
-    "prettier",
+
+    -- "typescript-language-server",
+    -- "prettier",
 
     -- c/cpp stuff
     "clangd",
@@ -47,7 +48,7 @@ M.mason = {
     "isort",
 
     -- rust
-    "rust_analyzer",
+    "rust-analyzer",
   },
 }
 
