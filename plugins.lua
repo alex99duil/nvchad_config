@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -16,7 +16,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -45,6 +45,21 @@ local plugins = {
     config = function()
       require "custom.configs.conform"
     end,
+  },
+
+  {
+    "mfussenegger/nvim-lint",
+    config = function()
+      require('lint').linters_by_ft = {
+        python = { "ruff" },
+      }
+    end,
+  },
+
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    cmd = "TroubleToggle",
   },
 
   "NvChad/nvcommunity",

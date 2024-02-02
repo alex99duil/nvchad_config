@@ -44,8 +44,9 @@ M.mason = {
 
     -- python
     "pyright",
-    "black",
-    "isort",
+    "ruff",
+    -- "black",
+    -- "isort",
 
     -- rust
     "rust-analyzer",

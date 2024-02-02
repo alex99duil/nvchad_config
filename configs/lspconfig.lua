@@ -16,5 +16,5 @@ end
 lspconfig.clangd.setup {
   offsetEncoding = "utf-16",
 }
--- 
+--
 -- lspconfig.pyright.setup { blabla}
