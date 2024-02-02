@@ -4,11 +4,11 @@ M.treesitter = {
   ensure_installed = {
     "vim",
     "lua",
-    "html",
-    "css",
-    "javascript",
-    "typescript",
-    "tsx",
+    -- "html",
+    -- "css",
+    -- "javascript",
+    -- "typescript",
+    -- "tsx",
     "c",
     "cpp",
     "python",
@@ -50,6 +50,7 @@ M.mason = {
 
     -- rust
     "rust-analyzer",
+    "codelldb", -- Debug adapter
   },
 }
 

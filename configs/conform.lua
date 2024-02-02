@@ -8,7 +8,7 @@ local options = {
     -- css = { "prettier" },
     -- html = { "prettier" },
 
-    sh = { "shfmt" },
+    -- sh = { "shfmt" },
     python = { "ruff_fix", "ruff_format" },
     -- python = { "isort", "black" },
     cpp = { "clang_format" },

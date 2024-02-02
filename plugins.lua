@@ -50,7 +50,7 @@ local plugins = {
   {
     "mfussenegger/nvim-lint",
     config = function()
-      require('lint').linters_by_ft = {
+      require("lint").linters_by_ft = {
         python = { "ruff" },
       }
     end,
@@ -59,12 +59,18 @@ local plugins = {
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    cmd = "TroubleToggle",
+    cmd = { "Trouble", "TroubleToggle", "TodoTrouble" },
   },
 
   "NvChad/nvcommunity",
   { import = "nvcommunity.folds.ufo" },
   { import = "nvcommunity.completion.codeium" },
+
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^4", -- Recommended
+    ft = { "rust" },
+  },
 
   -- To make a plugin not be loaded
   -- {
