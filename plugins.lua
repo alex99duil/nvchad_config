@@ -66,10 +66,18 @@ local plugins = {
   { import = "nvcommunity.folds.ufo" },
   { import = "nvcommunity.completion.codeium" },
 
-  {
-    "mrcjkb/rustaceanvim",
-    version = "^4", -- Recommended
-    ft = { "rust" },
+  -- {
+  --   "mrcjkb/rustaceanvim",
+  --   version = "^4", -- Recommended
+  --   ft = { "rust" },
+  -- },
+
+  { -- from https://github.com/dreamsofcode-io/neovim-rust/blob/main/plugins.lua
+    'saecki/crates.nvim',
+    ft = {"toml"},
+    config = function()
+      require('crates').setup()
+    end,
   },
 
   -- To make a plugin not be loaded

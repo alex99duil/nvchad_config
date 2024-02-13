@@ -7,6 +7,7 @@ local options = {
     -- javascript = { "prettier" },
     -- css = { "prettier" },
     -- html = { "prettier" },
+    json = { "clang_format" },
 
     -- sh = { "shfmt" },
     python = { "ruff_fix", "ruff_format" },
