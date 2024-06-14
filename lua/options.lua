@@ -1,6 +1,7 @@
 require "nvchad.options"
 
 -- add yours here!
+vim.g.codeium_no_map_tab = 1
 
 local o = vim.o
 o.foldlevel=20
