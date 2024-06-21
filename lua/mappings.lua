@@ -10,6 +10,9 @@ map("i", "jk", "<ESC>")
 map("n", "<C-S-j>", ":m +1<CR>")
 map("n", "<C-S-k>", ":m -2<CR>")
 
+map("t", "<ESC>", "<C-\\><C-N>")
+map("t", "<C-k>", "<C-\\><C-N>")
+
 -- Codeium
 map("i", "<C-g>", function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
 
