@@ -9,7 +9,7 @@ M.ui = {
   theme_toggle = { "catppuccin", "tokyodark" },
 
   nvdash = {
-    load_on_startup = true,
+    load_on_startup = false,
     header = {
       "                                                       ",
       "                                                       ",

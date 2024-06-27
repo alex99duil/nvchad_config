@@ -20,13 +20,18 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        -- lua
         "lua-language-server",
         "stylua",
+        -- C/C++
         "clangd",
         "clang-format",
+        -- Python
         "pyright",
         "ruff",
+        -- Rust
         "rust-analyzer",
+        "taplo",
         -- "html-lsp", "css-lsp" , "prettier"
       },
     },

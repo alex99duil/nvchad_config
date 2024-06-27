@@ -8,6 +8,7 @@ local options = {
     python = { "ruff_fix", "ruff_format" },
     cpp = { "clang_format" },
     rust = { "rustfmt" },
+    toml = { "taplo" },
   },
 
   -- format_on_save = {

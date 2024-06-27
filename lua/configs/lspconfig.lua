@@ -15,6 +15,18 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+lspconfig.rust_analyzer.setup {
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = { allFeatures = true },
+      procMacro = { enable = true },
+      checkOnSave = {
+        command = "clippy",
+      },
+    },
+  },
+}
+
 -- typescript
 -- lspconfig.tsserver.setup {
 --   on_attach = on_attach,
