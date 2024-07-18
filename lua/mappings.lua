@@ -13,6 +13,10 @@ map("n", "<C-S-k>", ":m -2<CR>")
 map("t", "<ESC>", "<C-\\><C-N>")
 map("t", "<C-k>", "<C-\\><C-N>")
 
+-- Quit from nvim
+map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
+map("n", "<leader>Q", "<cmd>qa!<cr>", { desc = "Quit all" })
+
 -- Codeium
 map("i", "<C-g>", function()
   return vim.fn["codeium#Accept"]()
