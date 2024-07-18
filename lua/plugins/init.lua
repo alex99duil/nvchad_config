@@ -29,8 +29,9 @@ return {
         -- Python
         "pyright",
         "ruff",
-        -- Rust
-        "rust-analyzer",
+        -- Rust (managed by `rustup`)
+        -- "rust-analyzer",
+        -- "rustfmt"
         "taplo",
         -- "html-lsp", "css-lsp" , "prettier"
       },
