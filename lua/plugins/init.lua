@@ -51,6 +51,7 @@ return {
         "rust",
         "ron",
         "toml",
+        "php",
       },
     },
   },

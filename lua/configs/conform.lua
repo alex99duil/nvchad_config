@@ -5,10 +5,10 @@ local options = {
     -- html = { "prettier" },
 
     json = { "clang_format" },
-    python = { "ruff_fix", "ruff_format" },
+    c = { "clang_format" },
     cpp = { "clang_format" },
     rust = { "rustfmt" },
-    toml = { "taplo" },
+    php = { "php_cs_fixer" },
   },
 
   -- format_on_save = {
