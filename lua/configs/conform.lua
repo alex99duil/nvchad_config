@@ -9,6 +9,7 @@ local options = {
     cpp = { "clang_format" },
     rust = { "rustfmt" },
     php = { "php_cs_fixer" },
+    python = { "ruff" },
   },
 
   -- format_on_save = {
@@ -18,4 +19,4 @@ local options = {
   -- },
 }
 
-require("conform").setup(options)
+return options
