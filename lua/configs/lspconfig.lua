@@ -1,65 +1,70 @@
--- load defaults i.e lua_lsp
-require("nvchad.configs.lspconfig").defaults()
-
-local lspconfig = require "lspconfig"
-
-local servers = { "pyright", "ruff", "clangd", "rust_analyzer", "psalm", "taplo" }
+local servers = {
+  --[["pyright",--]] --[["pyrefly",--]] "basedpyright", "ruff", --Python lsp, linter/formatter
+  "clangd",                                                     -- C++
+  "rust_analyzer", "taplo",                                     -- Rust lsp, toml lsp
+  "psalm",                                                      -- php
+  "biome", "tsgo",                                             -- typescript/javascript linter/formatter, lsp -ts_ls
+  "omnisharp"                                                   -- C# lsp
+}
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  vim.lsp.config(lsp, {
     on_attach = nvlsp.on_attach,
     on_init = nvlsp.on_init,
     capabilities = nvlsp.capabilities,
-  }
+  })
 end
 
-lspconfig.pyright.setup {
-  on_attach = nvlsp.on_attach,
+vim.lsp.config("basedpyright", {
+  -- on_attach = nvlsp.on_attach,
   settings = {
-    pyright = {
-      -- Using Ruff's import organizer
-      disableOrganizeImports = false,
-    },
-    python = {
-      pythonPath = "./.venv/bin/python",
+    basedpyright = {
       analysis = {
-        diagnosticMode = "workspace",
-        typeCheckingMode = "strict",
-        -- Ignore all files for analysis to exclusively use Ruff for linting
-        ignore = { "*" },
+        -- diagnosticMode = "workspace",
+        typeCheckingMode = "basic",
       },
     },
   },
-}
+})
+-- vim.lsp.config("pyright", {
+--   -- on_attach = nvlsp.on_attach,
+--   settings = {
+--     pyright = {
+--       -- Using Ruff's import organizer
+--       disableOrganizeImports = true,
+--     },
+--     python = {
+--       pythonPath = "./.venv/bin/python",
+--       analysis = {
+--         diagnosticMode = "workspace",
+--         typeCheckingMode = "strict",
+--         -- Ignore all files for analysis to exclusively use Ruff for linting
+--         ignore = { "*" },
+--       },
+--     },
+--   },
+-- })
 
-lspconfig.ruff.setup {
-  on_attach = nvlsp.on_attach,
+vim.lsp.config("ruff", {
+  -- on_attach = nvlsp.on_attach,
   trace = "messages",
   init_options = {
     settings = {
       logLevel = "debug",
     },
   },
-}
+})
 
-lspconfig.rust_analyzer.setup {
-  on_attach = nvlsp.on_attach,
+vim.lsp.config("rust_analyzer", {
+  -- on_attach = nvlsp.on_attach,
   settings = {
     ["rust-analyzer"] = {
       cargo = { allFeatures = true },
-      procMacro = { enable = true },
-      checkOnSave = {
-        command = "clippy",
-      },
+      check = { command = "clippy", }
     },
   },
-}
+})
 
--- typescript
--- lspconfig.tsserver.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = on_init,
---   capabilities = capabilities,
--- }
+vim.lsp.enable(servers)

@@ -6,26 +6,25 @@ return {
   },
 
   {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
-  },
-
-  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
         -- "vim", "vimdoc",
         -- "html", "css",
         "lua",
-        "c",
-        "cpp",
         "python",
         "rust",
+
+        "php",
+        "typescript",
+        "javascript",
+        "c",
+        "cpp",
+
         "ron",
         "toml",
-        "php",
+        "yaml",
+        "json"
       },
     },
   },
@@ -33,9 +32,10 @@ return {
   {
     "mfussenegger/nvim-lint",
     event = "VeryLazy",
+    opts = {},
     config = function()
-      require "configs.linters"
-    end,
+      require("configs.linters")
+    end
   },
 
   {
@@ -83,6 +83,7 @@ return {
 
   {
     "saecki/crates.nvim",
+    opts = {},
     event = { "BufRead Cargo.toml" },
     tag = "stable",
     config = function()

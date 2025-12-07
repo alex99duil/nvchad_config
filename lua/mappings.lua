@@ -1,7 +1,5 @@
 require "nvchad.mappings"
 
--- add yours here
-
 local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
@@ -21,5 +19,20 @@ map("n", "<leader>Q", "<cmd>qa!<cr>", { desc = "Quit all" })
 map("i", "<C-g>", function()
   return vim.fn["codeium#Accept"]()
 end, { expr = true, silent = true })
+
+map("n", "<leader>l",
+  function()
+    local bufnr = vim.api.nvim_get_current_buf()
+    if vim.lsp.inlay_hint.is_enabled() then
+      vim.lsp.inlay_hint.enable(false, { bufnr })
+    else
+      vim.lsp.inlay_hint
+          .enable(true, { bufnr })
+    end
+  end, { desc = "Toggle Inlay Hints" })
+
+map("n", "ca", function()
+  vim.lsp.buf.code_action()
+end, { desc = "LSP Code Action" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
